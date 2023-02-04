@@ -20,6 +20,9 @@
 - godot
   - build for web
   - core
+    - aim ui
+      - shot strength
+      - shot direction
     - bounce off rocks / sides of pot
     - gather resources
     - scrolling vertical map

@@ -11,6 +11,7 @@ extents = Vector2( 21.5, 308.625 )
 position = Vector2( -1, 4 )
 
 [node name="RootCap" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 0 )
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 position = Vector2( 143, 287 )

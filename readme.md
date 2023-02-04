@@ -38,6 +38,7 @@
   - effects
 - scene transitions
 - root "hairs"
+- color and thickness based on energy and generation
 - powerups
 - bugs
 - name tag (in the dirt next to the plant)

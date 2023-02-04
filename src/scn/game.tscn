@@ -15,6 +15,7 @@ position = Vector2( 512, 0 )
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 position = Vector2( 143, 287 )
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
 position = Vector2( 1, 20.375 )
@@ -22,6 +23,7 @@ shape = SubResource( 1 )
 
 [node name="RightWall" type="StaticBody2D" parent="."]
 position = Vector2( 887, 286 )
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 position = Vector2( 0, 24 )

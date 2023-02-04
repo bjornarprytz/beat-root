@@ -2,61 +2,66 @@ extends Node2D
 
 onready var spawner = load("res://scn/root_cap.tscn")
 
+const drawTrailInterval = 0.08
+const generationDecayFactor = 0.9
+const friction = 0.4
+const chaos = 0.97
+
 var distanceTravelled = 0.0
 var energy = 0.0
-var drawTrailInterval = 0.02
-var drawTrailTimeLeft = 0.0
+var drawTrailTimeLeft = drawTrailInterval
 
 var direction = Vector2()
 
-var chaos = 0.97
-
 
 var started = false
-var stability = 8 # Dont make it 0 :(
+var entropy = 0.0
+var stability = 16 # Dont make it 0 :(
 var momentum = 50.0
-
-var friction = 10.0
-
 
 onready var trail = get_node("Trail")
 onready var body = get_node("Body")
 
-func _process(delta):
-	if !started:
-		return
+func _ready():
+	trail.add_point(Vector2(0.0,0.0))
 
-	if energy > 100.0:
-		energy = 0
-		var child = spawner.instance()
-		add_child(child)
-		var random_angle = rand_range(-PI /16, PI /16)
-		child.direction = direction.rotated(random_angle)
-		if child.direction.y < 0:
-			child.direction = -child.direction
-		child.started = true
-		child.position = body.position
-		print("Spawned new!")
-		
+func _physics_process(delta):
+	var velocity = body.move_and_slide(direction * momentum * delta)
 	
-	if drawTrailTimeLeft < 0.0:
-		trail.add_point(body.position)
-		drawTrailTimeLeft = drawTrailInterval
-	
-	var velocity = direction * momentum * delta
-	velocity = body.move_and_slide(velocity)
-	print(velocity)
-	drawTrailTimeLeft -= delta
 	body.position += velocity
 	
 	var distance = velocity.length()
 	distanceTravelled += distance
 	energy += distance
+
+func _process(delta):
+	if !started:
+		return
+
+	if energy > (50.0 + (entropy * 120.0)):
+		energy = 0
+		var child = spawner.instance()
+		add_child(child)
+		
+		entropy += 0.5
+		child.entropy = entropy * 0.8
+		child.momentum = momentum * generationDecayFactor
+		child.stability = stability * generationDecayFactor
+		child.trail.default_color = trail.default_color * generationDecayFactor
+		child.trail.width = trail.width * generationDecayFactor
+		child.started = true
+		child.position = body.position
+		var random_angle = rand_range(-PI /4 , PI /4)
+		child.set_direction(direction.rotated(random_angle))
+		
+	drawTrailTimeLeft -= delta
+	if drawTrailTimeLeft < 0.0:
+		drawTrailTimeLeft = drawTrailInterval
+		trail.add_point(body.position)
 	
 	if randf() > chaos:
-		var loss = randf() / friction
+		var loss = randf() * friction
 		momentum = max((momentum - loss), 0.0)
-		print(momentum)
 		
 		if momentum == 0.0:
 			started = false
@@ -64,9 +69,7 @@ func _process(delta):
 		
 	if randf() > chaos:
 		var random_angle = rand_range(-PI / stability, PI / stability)
-		direction = direction.rotated(random_angle)
-		if direction.y < 0:
-			direction = -direction
+		set_direction(direction.rotated(random_angle))
 	
 
 func _input(event):
@@ -76,6 +79,11 @@ func _input(event):
 		var mouse_position = event.position
 		var node_position = global_position
 		# Calculate the direction vector from the node to the mouse position
-		direction = (mouse_position - node_position).normalized()
-		if direction.y < 0:
-			direction = -direction
+		set_direction(mouse_position - node_position)
+		
+
+
+func set_direction(vector):
+	direction = vector.normalized()
+	if direction.y < 0:
+		direction = -direction

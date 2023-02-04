@@ -1,17 +1,23 @@
 # Beatroot
 
-## TODO
+## Done
 
 - www.itch.io
   - page
-  - upload
-- git init
 - godot
-  - build for web
   - main scene
     - start button
   - core
-    - shoot root node (click / click + drag)
+    - aim
+
+## TODO
+
+- www.itch.io
+  - upload
+- godot
+  - build for web
+  - core
+    - draw line behind
     - add randomness to vector velocity
     - branch root node
     - bounce off rocks / sides of pot
@@ -22,12 +28,14 @@
     - background
     - seed
     - root
-  - sound
-    - music
-    - effects
 
 ## Nice to have
 
+- aim assist (arrow)
+
+- sound
+  - music
+  - effects
 - scene transitions
 - root "hairs"
 - powerups

@@ -1,25 +1,27 @@
 extends KinematicBody2D
 
-
 var velocity = Vector2()
-var random_factor = 0.3
-var random_interval = 1.0
-var time_since_last_random = 0.0
-var path = Path2D.new()
 var score = 0
+var speed = 1.0
 
-func _ready():
-	set_process(true)
-	path.set_material(get_node("LineMaterial"))
+onready var trail = get_node("../Trail")
 
 func _process(delta):
 	velocity = move_and_slide(velocity)
-	time_since_last_random += delta
-	if time_since_last_random > random_interval:
-		time_since_last_random = 0.0
-		velocity += Vector2(rand_range(-random_factor, random_factor), rand_range(-random_factor, random_factor))
-	path.add_point(get_position())
+	
+	position += velocity
+	print(position)
+	trail.add_point(position)
 
-func _on_Area2D_body_entered(body):
-	if body.is_in_group("table"):
-		velocity = velocity.bounce(body.get_contact_normal(get_rid()))
+func _input(event):
+	if (event.is_pressed() and event.button_index == BUTTON_LEFT):
+		# Get the mouse position
+		var mouse_position = event.position
+		var node_position = global_position
+		# Calculate the direction vector from the node to the mouse position
+		var direction = (mouse_position - node_position).normalized()
+		# Ensure that the direction vector is always downwards
+		if direction.y < 0:
+			direction = -direction
+		# Set the velocity of the node
+		velocity = direction * speed

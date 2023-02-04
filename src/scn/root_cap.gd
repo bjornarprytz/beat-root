@@ -1,17 +1,64 @@
-extends KinematicBody2D
+extends Node2D
 
-var velocity = Vector2()
-var score = 0
-var speed = 1.0
+onready var spawner = load("res://scn/root_cap.tscn")
 
-onready var trail = get_node("../Trail")
+var distanceTravelled = 0.0
+var energy = 0.0
+
+var direction = Vector2()
+
+var chaos = 0.97
+
+
+var started = true
+var stability = 8 # Dont make it 0 :(
+var momentum = 50.0
+
+var friction = 10.0
+
+onready var trail = get_node("Trail")
+onready var body = get_node("Body")
 
 func _process(delta):
-	velocity = move_and_slide(velocity)
+	if !started:
+		return
+
+	var velocity = direction * momentum * delta
+	velocity = body.move_and_slide(velocity)
 	
-	position += velocity
-	print(position)
-	trail.add_point(position)
+	body.position += velocity
+	trail.add_point(body.position)
+	
+	var distance = velocity.length()
+	distanceTravelled += distance
+	energy += distance
+	
+	if energy > 100.0:
+		energy = 0
+		var child = spawner.instance()
+		child.position = body.position
+		child.direction = direction.rotated(PI / 4)
+		child.started = true
+		add_child(child)
+		print("Spawned new!")
+		
+	
+	if randf() > chaos:
+		var loss = randf() / friction
+		momentum = max((momentum - loss), 0.0)
+		print(momentum)
+		
+		if momentum == 0.0:
+			started = false
+			print(distanceTravelled)
+		
+	if randf() > chaos:
+		var random_angle = rand_range(-PI / stability, PI / stability)
+		direction = direction.rotated(random_angle)
+		if direction.y < 0:
+			direction = -direction
+			
+	
 
 func _input(event):
 	if (event.is_pressed() and event.button_index == BUTTON_LEFT):
@@ -19,9 +66,6 @@ func _input(event):
 		var mouse_position = event.position
 		var node_position = global_position
 		# Calculate the direction vector from the node to the mouse position
-		var direction = (mouse_position - node_position).normalized()
-		# Ensure that the direction vector is always downwards
+		direction = (mouse_position - node_position).normalized()
 		if direction.y < 0:
 			direction = -direction
-		# Set the velocity of the node
-		velocity = direction * speed

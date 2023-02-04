@@ -9,6 +9,9 @@
     - start button
   - core
     - aim
+    - draw line behind
+    - branch root node
+    - add randomness to vector velocity
 
 ## TODO
 
@@ -17,9 +20,6 @@
 - godot
   - build for web
   - core
-    - draw line behind
-    - add randomness to vector velocity
-    - branch root node
     - bounce off rocks / sides of pot
     - gather resources
     - scrolling vertical map

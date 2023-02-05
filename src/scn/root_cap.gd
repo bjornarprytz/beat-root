@@ -2,6 +2,7 @@ extends Node2D
 
 export var is_main = false
 onready var spawner = load("res://scn/root_cap.tscn")
+onready var game_manager = get_node("/root/GameManager")
 
 const drawTrailInterval = 0.08
 const generationDecayFactor = 0.9
@@ -80,6 +81,7 @@ func _process(delta):
 		
 		if momentum == 0.0:
 			started = false
+			game_manager.score += distanceTravelled
 			if (is_main):
 				button.visible = true
 		
@@ -108,11 +110,11 @@ func _input(event):
 			stability = 24
 			entropy -= 0.2
 		if (strength >= 100.0 and strength < 200.0):
-			momentum = 30.0
-			stability = 8
+			momentum = 40.0
+			stability = 12
 		if (strength >= 200.0):
-			momentum = 50.0
-			stability = 4
+			momentum = 70.0
+			stability = 8
 			entropy += 0.2
 		
 		set_direction(start_vector)

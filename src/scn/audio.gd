@@ -1,9 +1,5 @@
 extends AudioStreamPlayer2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var knitre = preload("res://assets/mp3/Knitre.mp3")
 var knitre2 = preload("res://assets/mp3/Knitre 2.mp3")
 var knitre3 = preload("res://assets/mp3/Knitre 3.mp3")

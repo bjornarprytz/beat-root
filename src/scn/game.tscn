@@ -14,6 +14,7 @@ script = ExtResource( 3 )
 [node name="AudioManager" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 507, 221 )
 stream = ExtResource( 2 )
+volume_db = -20.0
 pitch_scale = 0.8
 script = ExtResource( 4 )
 

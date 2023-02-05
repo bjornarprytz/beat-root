@@ -162,7 +162,7 @@ func _on_Area2D_area_entered(area):
 	area.get_parent().queue_free()
 
 func _on_WinCheck_area_entered(area):
-	print("win")
+	get_tree().change_scene("res://scn/end.tscn")
 	pass
 	# TODO: Win screen
 	

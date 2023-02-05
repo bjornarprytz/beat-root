@@ -12,6 +12,8 @@
     - draw line behind
     - branch root node
     - add randomness to vector velocity
+  - sound
+    - root effects
 
 ## TODO
 
@@ -31,11 +33,10 @@
     - seed
     - root
   - sound
-    - music
 
 ## Nice to have
 
-- effects
+- music
 - build for web
 - scene transitions
 - root "hairs"

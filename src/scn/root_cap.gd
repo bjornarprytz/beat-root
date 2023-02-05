@@ -104,6 +104,7 @@ func _input(event):
 		aim_line.free()
 		is_aiming = false
 		
+		game_manager.shots += 1
 		
 		if (strength  < 100.0):
 			momentum = 20.0
@@ -164,11 +165,11 @@ func _on_Area2D_area_entered(area):
 	area.get_parent().queue_free()
 
 func _on_WinCheck_area_entered(area):
+	game_manager.win = true
 	get_tree().change_scene("res://scn/end.tscn")
-	pass
-	# TODO: Win screen
 	
 
 func _on_LossCheck_area_entered(area):
-	print("loss")
+	game_manager.win = false
+	get_tree().change_scene("res://scn/end.tscn")
 	# TODO: Lose screen

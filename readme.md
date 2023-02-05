@@ -18,21 +18,22 @@
       - shot strength
   - sound
     - root effects
+  - textures
+    - background
   - animation
     - root
+  - pick root
+    - glow
+- www.itch.io
+  - upload
 
 ## TODO
 
-- www.itch.io
-  - upload
 - godot
   - core
     - gather resources
     - win when you get to the bottom
-    - pick root
-      - glow
   - animation
-    - background
     - seed
 
 ## Nice to have

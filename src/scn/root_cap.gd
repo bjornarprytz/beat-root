@@ -156,3 +156,7 @@ func _on_button_pressed():
 	aim_line.width = 1.0
 	body.add_child(aim_line)
 	aim_line.add_point(Vector2(0,0))
+
+func _on_Area2D_area_entered(area):
+	energy += 100.0
+	area.get_parent().queue_free()

@@ -21,13 +21,15 @@
   - upload
 - godot
   - core
-    - aim ui
-      - shot strength
-      - shot direction
     - bounce off rocks / sides of pot
     - gather resources
     - scrolling vertical map
     - win when you get to the bottom
+    - aim ui
+      - shot strength
+      - shot direction
+    - pick root
+      - glow
   - animation
     - background
     - seed

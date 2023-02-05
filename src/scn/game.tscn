@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scn/root_cap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/mp3/Knitre 3.mp3" type="AudioStream" id=2]
@@ -11,9 +11,13 @@
 [ext_resource path="res://assets/sprites/left-side.PNG" type="Texture" id=9]
 [ext_resource path="res://assets/sprites/right-side.PNG" type="Texture" id=10]
 [ext_resource path="res://assets/sprites/repeatable-dirt.png" type="Texture" id=11]
+[ext_resource path="res://assets/bean.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.5, 308.625 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 128, 25 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -24,6 +28,14 @@ margin_top = 4.0
 margin_right = 868.0
 margin_bottom = 604.0
 texture = ExtResource( 11 )
+expand = true
+
+[node name="Bean" type="TextureRect" parent="."]
+margin_left = 477.0
+margin_top = 4.0
+margin_right = 537.0
+margin_bottom = 64.0
+texture = ExtResource( 12 )
 expand = true
 
 [node name="AudioManager" type="AudioStreamPlayer2D" parent="."]
@@ -120,5 +132,14 @@ position = Vector2( 246, 326 )
 rotation = 0.261799
 scale = Vector2( 0.150505, 0.16263 )
 
+[node name="Target" type="Area2D" parent="."]
+position = Vector2( 511, 611 )
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target"]
+position = Vector2( 11, -31 )
+shape = SubResource( 2 )
+
 [node name="RootCap" parent="." instance=ExtResource( 1 )]
-position = Vector2( 512, 30 )
+position = Vector2( 500, 62 )

@@ -12,6 +12,7 @@
     - draw line behind
     - branch root node
     - add randomness to vector velocity
+    - bounce off rocks / sides of pot
   - sound
     - root effects
 
@@ -21,7 +22,6 @@
   - upload
 - godot
   - core
-    - bounce off rocks / sides of pot
     - gather resources
     - scrolling vertical map
     - win when you get to the bottom

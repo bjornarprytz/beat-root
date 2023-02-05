@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scn/root_cap.gd" type="Script" id=1]
+[ext_resource path="res://assets/ui/button-texture.png" type="Texture" id=2]
+[ext_resource path="res://scn/button_anim.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 1.41421
@@ -14,6 +16,19 @@ collision_mask = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
 shape = SubResource( 1 )
 
+[node name="Button" type="TextureButton" parent="Body"]
+margin_left = -24.0
+margin_top = -24.0
+margin_right = 24.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 24, 24 )
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 2 )
+expand = true
+script = ExtResource( 3 )
+
 [node name="Trail" type="Line2D" parent="."]
 width = 2.0
 default_color = Color( 0.835294, 0.827451, 0.835294, 1 )
+
+[connection signal="pressed" from="Body/Button" to="." method="_on_button_pressed"]

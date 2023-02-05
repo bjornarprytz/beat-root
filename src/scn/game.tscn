@@ -24,7 +24,7 @@ pitch_scale = 0.8
 script = ExtResource( 4 )
 
 [node name="RootCap" parent="." instance=ExtResource( 1 )]
-position = Vector2( 512, 0 )
+position = Vector2( 512, 30 )
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 position = Vector2( 143, 287 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Godlyder.mp3-d56eefb04d1ce74f8d55db9020aa4f3b.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3/Godlyder.mp3"
+dest_files=[ "res://.import/Godlyder.mp3-d56eefb04d1ce74f8d55db9020aa4f3b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

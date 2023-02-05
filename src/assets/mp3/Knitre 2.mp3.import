@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Knitre 2.mp3-1b463faf86154892c46cdcfba993b734.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3/Knitre 2.mp3"
+dest_files=[ "res://.import/Knitre 2.mp3-1b463faf86154892c46cdcfba993b734.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

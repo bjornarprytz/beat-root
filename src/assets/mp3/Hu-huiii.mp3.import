@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hu-huiii.mp3-7008764e36a34a10b7262a4bccfb1f4c.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3/Hu-huiii.mp3"
+dest_files=[ "res://.import/Hu-huiii.mp3-7008764e36a34a10b7262a4bccfb1f4c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

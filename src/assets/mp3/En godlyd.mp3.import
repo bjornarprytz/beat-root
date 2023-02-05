@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/En godlyd.mp3-928dffb5facc387256e15ee1eedfd2c3.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3/En godlyd.mp3"
+dest_files=[ "res://.import/En godlyd.mp3-928dffb5facc387256e15ee1eedfd2c3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

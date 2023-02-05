@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Fjert.mp3-1d1f4a3a0baa9e0390d1ace23d09f41f.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3/Fjert.mp3"
+dest_files=[ "res://.import/Fjert.mp3-1d1f4a3a0baa9e0390d1ace23d09f41f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

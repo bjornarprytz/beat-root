@@ -18,7 +18,6 @@
 - www.itch.io
   - upload
 - godot
-  - build for web
   - core
     - aim ui
       - shot strength
@@ -31,14 +30,13 @@
     - background
     - seed
     - root
+  - sound
+    - music
 
 ## Nice to have
 
-- aim assist (arrow)
-
-- sound
-  - music
-  - effects
+- effects
+- build for web
 - scene transitions
 - root "hairs"
 - color and thickness based on energy and generation

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Glad godlyd.mp3-3c3f00a9a45cda1a1622e12e1d4d4eff.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3/Glad godlyd.mp3"
+dest_files=[ "res://.import/Glad godlyd.mp3-3c3f00a9a45cda1a1622e12e1d4d4eff.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

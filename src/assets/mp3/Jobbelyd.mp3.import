@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Jobbelyd.mp3-49f4e5965e2e9720731db1c0e73a61d7.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3/Jobbelyd.mp3"
+dest_files=[ "res://.import/Jobbelyd.mp3-49f4e5965e2e9720731db1c0e73a61d7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -22,7 +22,7 @@
 [ext_resource path="res://scn/water/water2.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21.5, 308.625 )
+extents = Vector2( 21.5, 512.736 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 80, 18 )
@@ -39,8 +39,8 @@ scale = Vector2( 0.450749, 0.450749 )
 texture = ExtResource( 16 )
 
 [node name="PotWhole" type="Sprite" parent="."]
-position = Vector2( 514, 613 )
-scale = Vector2( 0.494107, 0.293136 )
+position = Vector2( 504, 898 )
+scale = Vector2( 0.435468, 0.293136 )
 texture = ExtResource( 14 )
 
 [node name="Background" type="TextureRect" parent="."]
@@ -51,8 +51,16 @@ margin_bottom = 604.0
 texture = ExtResource( 11 )
 expand = true
 
+[node name="Background2" type="TextureRect" parent="."]
+margin_left = 163.0
+margin_top = 4.0
+margin_right = 868.0
+margin_bottom = 888.0
+texture = ExtResource( 11 )
+expand = true
+
 [node name="Beam" type="Sprite" parent="."]
-position = Vector2( 519, 545 )
+position = Vector2( 531, 827 )
 scale = Vector2( 0.248927, 0.14768 )
 texture = ExtResource( 13 )
 
@@ -89,8 +97,17 @@ margin_bottom = 323.0
 texture = ExtResource( 9 )
 expand = true
 
+[node name="TextureRect3" type="TextureRect" parent="LeftWall"]
+margin_left = -286.65
+margin_top = -15.0323
+margin_right = 420.35
+margin_bottom = 610.968
+texture = ExtResource( 9 )
+expand = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2( 1, 20.375 )
+position = Vector2( 1.00001, 85.8301 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="RightWall" type="StaticBody2D" parent="."]
@@ -99,15 +116,24 @@ rotation = 0.0698132
 collision_layer = 2
 
 [node name="TextureRect" type="TextureRect" parent="RightWall"]
-margin_left = -514.0
-margin_top = -286.0
-margin_right = 64.0
-margin_bottom = 336.0
+margin_left = -520.156
+margin_top = -12.7468
+margin_right = 57.8438
+margin_bottom = 609.253
+texture = ExtResource( 10 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="RightWall"]
+margin_left = -520.127
+margin_top = -270.376
+margin_right = 57.8726
+margin_bottom = 351.624
 texture = ExtResource( 10 )
 expand = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2( 0, 24 )
+position = Vector2( 0.00012207, 162.656 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="PotBorderEnd" type="Sprite" parent="."]
@@ -123,7 +149,7 @@ rotation = -0.261799
 scale = Vector2( 0.136103, 0.136103 )
 
 [node name="Rock13" parent="Rocks" instance=ExtResource( 5 )]
-position = Vector2( 808, 542 )
+position = Vector2( 787, 532 )
 rotation = -0.523598
 scale = Vector2( 0.136103, 0.136103 )
 
@@ -138,72 +164,103 @@ rotation = -1.0472
 scale = Vector2( 0.217307, 0.217307 )
 
 [node name="Rock12" parent="Rocks" instance=ExtResource( 5 )]
-position = Vector2( 231, 522 )
+position = Vector2( 278, 835 )
 rotation = -2.35619
 scale = Vector2( 0.217307, 0.217307 )
 
 [node name="Rock8" parent="Rocks" instance=ExtResource( 5 )]
-position = Vector2( 504, 495 )
+position = Vector2( 610, 746 )
 rotation = 0.523598
-scale = Vector2( 0.0579991, 0.0579991 )
+scale = Vector2( 0.116957, 0.116957 )
 
 [node name="Rock2" parent="Rocks" instance=ExtResource( 6 )]
 position = Vector2( 687.439, 195 )
 scale = Vector2( 0.121387, 0.121387 )
 
 [node name="Rock3" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 461, 285 )
+position = Vector2( 456, 290 )
 rotation = -0.87441
 scale = Vector2( 0.226114, 0.226114 )
 
 [node name="Rock5" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 296.926, 453.388 )
+position = Vector2( 237, 439 )
 rotation = -2.8414
-scale = Vector2( 0.0791592, 0.0791592 )
+scale = Vector2( 0.181282, 0.181282 )
 
 [node name="Rock6" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 496, 479 )
+position = Vector2( 673, 676 )
 rotation = -3.92699
-scale = Vector2( 0.0920814, 0.0920814 )
+scale = Vector2( 0.183707, 0.183707 )
 
 [node name="Rock7" parent="Rocks" instance=ExtResource( 6 )]
 position = Vector2( 778, 347 )
 rotation = -4.18878
 scale = Vector2( 0.194264, 0.194264 )
 
+[node name="Rock14" parent="Rocks" instance=ExtResource( 6 )]
+position = Vector2( 224, 237 )
+rotation = -4.18878
+scale = Vector2( 0.127157, 0.127157 )
+
 [node name="Rock4" parent="Rocks" instance=ExtResource( 7 )]
-position = Vector2( 506, 145 )
-scale = Vector2( 0.0907079, 0.0907079 )
+position = Vector2( 626, 542 )
+scale = Vector2( 0.386062, 0.386062 )
+
+[node name="Rock16" parent="Rocks" instance=ExtResource( 7 )]
+position = Vector2( 246, 625 )
+rotation = 1.0472
+scale = Vector2( 0.192367, 0.192367 )
+
+[node name="Rock17" parent="Rocks" instance=ExtResource( 7 )]
+position = Vector2( 468, 183 )
+scale = Vector2( 0.352821, 0.352821 )
+
+[node name="Rock19" parent="Rocks" instance=ExtResource( 7 )]
+position = Vector2( 771, 734 )
+rotation = 0.261799
+scale = Vector2( 0.269293, 0.269293 )
+
+[node name="Rock18" parent="Rocks" instance=ExtResource( 7 )]
+position = Vector2( 452, 717 )
+rotation = 2.35619
+scale = Vector2( 0.352821, 0.352821 )
 
 [node name="Rock9" parent="Rocks" instance=ExtResource( 8 )]
-position = Vector2( 246, 326 )
-rotation = 0.261799
-scale = Vector2( 0.150505, 0.16263 )
+position = Vector2( 322.121, 550.711 )
+rotation = 2.87979
+scale = Vector2( 0.200658, 0.216824 )
+
+[node name="Rock15" parent="Rocks" instance=ExtResource( 8 )]
+position = Vector2( 736, 835 )
+rotation = 4.18878
+scale = Vector2( 0.19184, 0.207295 )
 
 [node name="Waters" type="Node" parent="."]
 
 [node name="Water" parent="Waters" instance=ExtResource( 19 )]
-position = Vector2( 261, 392 )
+position = Vector2( 777, 432 )
 rotation = 1.0472
-scale = Vector2( 0.1096, 0.1096 )
+scale = Vector2( 0.169853, 0.169853 )
 
 [node name="Water2" parent="Waters" instance=ExtResource( 19 )]
-position = Vector2( 452, 360 )
-scale = Vector2( 0.0801274, 0.0801274 )
+position = Vector2( 378, 654 )
+rotation = -0.785397
+scale = Vector2( 0.191296, 0.191296 )
 
 [node name="Water3" parent="Waters" instance=ExtResource( 19 )]
-position = Vector2( 336, 277 )
-scale = Vector2( 0.180294, 0.180294 )
+position = Vector2( 308.107, 304.251 )
+rotation = -2.87979
+scale = Vector2( 0.317733, 0.317733 )
 
 [node name="Water4" parent="Waters" instance=ExtResource( 19 )]
-position = Vector2( 748, 154 )
-rotation = -1.309
-scale = Vector2( 0.0924455, 0.0924455 )
+position = Vector2( 522, 424 )
+rotation = 1.0472
+scale = Vector2( 0.287986, 0.287986 )
 
 [node name="Water7" parent="Waters" instance=ExtResource( 19 )]
-position = Vector2( 688, 272 )
+position = Vector2( 675, 327 )
 rotation = -1.309
-scale = Vector2( 0.0924455, 0.0924455 )
+scale = Vector2( 0.179354, 0.179354 )
 
 [node name="Water5" parent="Waters" instance=ExtResource( 20 )]
 position = Vector2( 271, 137 )
@@ -211,9 +268,24 @@ rotation = 2.09439
 scale = Vector2( 0.189086, 0.189086 )
 
 [node name="Water6" parent="Waters" instance=ExtResource( 20 )]
-position = Vector2( 777, 427 )
-rotation = 2.09439
-scale = Vector2( 0.0567647, 0.0567647 )
+position = Vector2( 750.943, 632.533 )
+rotation = 3.14159
+scale = Vector2( 0.137884, 0.137884 )
+
+[node name="Water8" parent="Waters" instance=ExtResource( 20 )]
+position = Vector2( 287, 729 )
+rotation = 2.61799
+scale = Vector2( 0.178318, 0.182006 )
+
+[node name="Water9" parent="Waters" instance=ExtResource( 20 )]
+position = Vector2( 766, 205 )
+rotation = 4.45058
+scale = Vector2( 0.178318, 0.182006 )
+
+[node name="Water10" parent="Waters" instance=ExtResource( 20 )]
+position = Vector2( 550, 609 )
+rotation = 6.02138
+scale = Vector2( 0.126768, 0.12939 )
 
 [node name="Target" type="Area2D" parent="."]
 position = Vector2( 511, 611 )
@@ -221,7 +293,7 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Target"]
-position = Vector2( -1, -16 )
+position = Vector2( 12, 264 )
 shape = SubResource( 2 )
 
 [node name="Loss" type="Area2D" parent="."]
@@ -230,7 +302,7 @@ collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Loss"]
-position = Vector2( 6, 28.5 )
+position = Vector2( 11, 283 )
 shape = SubResource( 3 )
 
 [node name="RootCap" parent="." instance=ExtResource( 1 )]

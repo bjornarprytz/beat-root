@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scn/root_cap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/mp3/Knitre 3.mp3" type="AudioStream" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://assets/pot_dirt.png" type="Texture" id=15]
 [ext_resource path="res://assets/pot_border.png" type="Texture" id=16]
 [ext_resource path="res://assets/pot_border_end.png" type="Texture" id=17]
+[ext_resource path="res://scn/game_music.gd" type="Script" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.5, 308.625 )
@@ -185,3 +186,7 @@ shape = SubResource( 3 )
 
 [node name="RootCap" parent="." instance=ExtResource( 1 )]
 position = Vector2( 500, 62 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 509, 576 )
+script = ExtResource( 18 )

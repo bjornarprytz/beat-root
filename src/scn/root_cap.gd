@@ -162,5 +162,11 @@ func _on_Area2D_area_entered(area):
 	area.get_parent().queue_free()
 
 func _on_WinCheck_area_entered(area):
-	energy += 100.0
-	area.get_parent().queue_free()
+	print("win")
+	pass
+	# TODO: Win screen
+	
+
+func _on_LossCheck_area_entered(area):
+	print("loss")
+	# TODO: Lose screen

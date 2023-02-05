@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scn/root_cap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/mp3/Knitre 3.mp3" type="AudioStream" id=2]
@@ -12,12 +12,19 @@
 [ext_resource path="res://assets/sprites/right-side.PNG" type="Texture" id=10]
 [ext_resource path="res://assets/sprites/repeatable-dirt.png" type="Texture" id=11]
 [ext_resource path="res://assets/bean.png" type="Texture" id=12]
+[ext_resource path="res://assets/beam.png" type="Texture" id=13]
+[ext_resource path="res://assets/pot_whole.png" type="Texture" id=14]
+[ext_resource path="res://assets/pot_dirt.png" type="Texture" id=15]
+[ext_resource path="res://assets/pot_border.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.5, 308.625 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 128, 25 )
+extents = Vector2( 80, 18 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 397.25, 22.5 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -29,6 +36,26 @@ margin_right = 868.0
 margin_bottom = 604.0
 texture = ExtResource( 11 )
 expand = true
+
+[node name="PotBorder" type="Sprite" parent="."]
+position = Vector2( 528, -65 )
+scale = Vector2( 0.450749, 0.450749 )
+texture = ExtResource( 16 )
+
+[node name="PotWhole" type="Sprite" parent="."]
+position = Vector2( 514, 613 )
+scale = Vector2( 0.430344, 0.255307 )
+texture = ExtResource( 14 )
+
+[node name="Beam" type="Sprite" parent="."]
+position = Vector2( 519, 545 )
+scale = Vector2( 0.248927, 0.14768 )
+texture = ExtResource( 13 )
+
+[node name="PotDirt" type="Sprite" parent="."]
+position = Vector2( 532, 93 )
+scale = Vector2( 0.50418, 0.299112 )
+texture = ExtResource( 15 )
 
 [node name="Bean" type="TextureRect" parent="."]
 margin_left = 477.0
@@ -138,8 +165,17 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Target"]
-position = Vector2( 11, -31 )
+position = Vector2( -1, -16 )
 shape = SubResource( 2 )
+
+[node name="Loss" type="Area2D" parent="."]
+position = Vector2( 511, 611 )
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Loss"]
+position = Vector2( 6, 28.5 )
+shape = SubResource( 3 )
 
 [node name="RootCap" parent="." instance=ExtResource( 1 )]
 position = Vector2( 500, 62 )

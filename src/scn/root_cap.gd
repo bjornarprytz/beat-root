@@ -5,7 +5,7 @@ onready var spawner = load("res://scn/root_cap.tscn")
 
 const drawTrailInterval = 0.08
 const generationDecayFactor = 0.9
-const friction = 2.0
+const friction = 1.2
 const lossInterval = 0.1
 const chaos = 0.98
 
@@ -64,7 +64,7 @@ func _process(delta):
 	if !started:
 		return
 
-	if !benign && energy > (50.0 + (entropy * 120.0)):
+	if !benign && energy > (30.0 + (entropy * 10.0)):
 		spawn_child(false)
 		
 	drawTrailTimeLeft -= delta
@@ -79,7 +79,6 @@ func _process(delta):
 		momentum = max((momentum - loss), 0.0)
 		
 		if momentum == 0.0:
-			print("stopped")
 			started = false
 			if (is_main):
 				button.visible = true
@@ -100,7 +99,6 @@ func _input(event):
 		var start_vector = mouse_position - node_position
 		set_direction(start_vector)
 		var strength = start_vector.length()
-		# TODO: Do something with strength
 		aim_line.free()
 		is_aiming = false
 		
@@ -108,12 +106,16 @@ func _input(event):
 		if (strength  < 100.0):
 			momentum = 20.0
 			stability = 24
+			entropy -= 0.2
 		if (strength >= 100.0 and strength < 200.0):
 			momentum = 30.0
-			stability = 12
+			stability = 8
 		if (strength >= 200.0):
-			momentum = 70.0
-			stability = 6
+			momentum = 50.0
+			stability = 4
+			entropy += 0.2
+		
+		set_direction(start_vector)
 		
 
 func set_direction(vector):

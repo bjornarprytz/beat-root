@@ -13,8 +13,13 @@
     - branch root node
     - add randomness to vector velocity
     - bounce off rocks / sides of pot
+    - aim ui
+      - shot direction
+      - shot strength
   - sound
     - root effects
+  - animation
+    - root
 
 ## TODO
 
@@ -23,21 +28,16 @@
 - godot
   - core
     - gather resources
-    - scrolling vertical map
     - win when you get to the bottom
-    - aim ui
-      - shot strength
-      - shot direction
     - pick root
       - glow
   - animation
     - background
     - seed
-    - root
-  - sound
 
 ## Nice to have
 
+- scrolling vertical map
 - music
 - build for web
 - scene transitions

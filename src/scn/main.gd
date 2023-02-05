@@ -6,7 +6,7 @@ var start_zoom = Vector2(.63, .63)
 var end_zoom  = Vector2(.2, .2)
 var current_pos = start_pos
 var current_zoom = start_zoom
-var pot = Vector2(700, 450)
+var pot = Vector2(420, 450)
 var speed = 10
 var zooming
 var transition_duration = 0.5 # duration of the smooth transition in seconds

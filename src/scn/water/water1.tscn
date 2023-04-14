@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/water1.png" type="Texture" id=1]
+[ext_resource path="res://assets/water1.png" type="Texture2D" id=1]
 
-[node name="Water" type="Sprite"]
+[node name="Water" type="Sprite2D"]
 texture = ExtResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -10,4 +10,4 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PoolVector2Array( -82, -112, 11, -99, 72, -65, 123, -109, 130, -156, 158, -158, 186, -132, 182, -101, 144, -97, 129, -83, 142, -67, 125, -58, 111, -65, 89, -38, 96, 30, 72, 69, 54, 83, 71, 104, 48, 113, 34, 86, -6, 68, -53, 93, -77, 86, -88, 92, -99, 110, -114, 104, -98, 80, -115, 57, -113, 19, -143, -28, -120, -81, -139, -128 )
+polygon = PackedVector2Array( -82, -112, 11, -99, 72, -65, 123, -109, 130, -156, 158, -158, 186, -132, 182, -101, 144, -97, 129, -83, 142, -67, 125, -58, 111, -65, 89, -38, 96, 30, 72, 69, 54, 83, 71, 104, 48, 113, 34, 86, -6, 68, -53, 93, -77, 86, -88, 92, -99, 110, -114, 104, -98, 80, -115, 57, -113, 19, -143, -28, -120, -81, -139, -128 )

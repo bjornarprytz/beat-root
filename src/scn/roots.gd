@@ -1,7 +1,7 @@
 extends Node
 
-onready var trail = $Trail
-onready var trail = $Trail
+@onready var trail = $Trail
+@onready var trail = $Trail
 
 var nextDraw = 1.0
 

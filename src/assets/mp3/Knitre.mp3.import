@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/Knitre.mp3-25b19920f10e6955604ef141ced7999d.mp3str"
+uid="uid://c2y5kxkai6kmr"
+path="res://.godot/imported/Knitre.mp3-25b19920f10e6955604ef141ced7999d.mp3str"
 
 [deps]
 
 source_file="res://assets/mp3/Knitre.mp3"
-dest_files=[ "res://.import/Knitre.mp3-25b19920f10e6955604ef141ced7999d.mp3str" ]
+dest_files=["res://.godot/imported/Knitre.mp3-25b19920f10e6955604ef141ced7999d.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

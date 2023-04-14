@@ -1,8 +1,8 @@
 extends Node2D
 
-export var is_main = false
-onready var spawner = load("res://scn/root_cap.tscn")
-onready var game_manager = get_node("/root/GameManager")
+@export var is_main = false
+@onready var spawner = load("res://scn/root_cap.tscn")
+@onready var game_manager = get_node("/root/GameManager")
 
 const drawTrailInterval = 0.08
 const generationDecayFactor = 0.9
@@ -27,9 +27,9 @@ var momentum = 50.0
 
 var aim_line: Line2D
 
-onready var trail = get_node("Trail")
-onready var body = get_node("Body")
-onready var button = get_node("Body/Button")
+@onready var trail = get_node("Trail")
+@onready var body = get_node("Body")
+@onready var button = get_node("Body/Button")
 
 func _ready():
 	trail.add_point(Vector2(0.0,0.0))
@@ -37,7 +37,9 @@ func _ready():
 func _physics_process(delta):
 	if !started:
 		return
-	var velocity = body.move_and_slide(direction * momentum * delta)
+	body.set_velocity(direction * momentum * delta)
+	body.move_and_slide()
+	var velocity = body.velocity
 	
 	body.position += velocity
 	
@@ -56,11 +58,11 @@ func _process(delta):
 		aim_line.add_point(end)
 		var strength = (start-end).length()
 		if (strength  < 100.0):
-			aim_line.default_color = Color.green
+			aim_line.default_color = Color.GREEN
 		if (strength >= 100.0 and strength < 200.0):
-			aim_line.default_color = Color.yellow
+			aim_line.default_color = Color.YELLOW
 		if (strength >= 200.0):
-			aim_line.default_color = Color.red
+			aim_line.default_color = Color.RED
 	
 	if !started:
 		return
@@ -85,14 +87,14 @@ func _process(delta):
 			if (is_main):
 				button.visible = true
 		
-		var random_angle = rand_range(-PI / stability, PI / stability)
+		var random_angle = randf_range(-PI / stability, PI / stability)
 		set_direction(direction.rotated(random_angle))
 
 func _input(event):
 	if !is_aiming:
 		return
 	
-	if (event.is_pressed() and event.button_index == BUTTON_LEFT):
+	if (event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
 		started = true
 		# Get the mouse position
 		var mouse_position = event.position
@@ -127,12 +129,12 @@ func set_direction(vector):
 		direction.y = -direction.y
 		
 func spawn_child(benign_root):
-	var child = spawner.instance()
+	var child = spawner.instantiate()
 	add_child(child)
 	
 	if benign_root:
 		child.benign = true
-		child.trail.default_color = Color.gray
+		child.trail.default_color = Color.GRAY
 		child.trail.width = trail.width * 0.5
 		
 	else:
@@ -146,7 +148,7 @@ func spawn_child(benign_root):
 
 	child.position = body.position
 
-	var random_angle = rand_range(-PI /4 , PI /4)
+	var random_angle = randf_range(-PI /4 , PI /4)
 	child.set_direction(direction.rotated(random_angle))
 	child.started = true
 	child.button.hide()
@@ -166,10 +168,10 @@ func _on_Area2D_area_entered(area):
 
 func _on_WinCheck_area_entered(area):
 	game_manager.win = true
-	get_tree().change_scene("res://scn/end.tscn")
+	get_tree().change_scene_to_file("res://scn/end.tscn")
 	
 
 func _on_LossCheck_area_entered(area):
 	game_manager.win = false
-	get_tree().change_scene("res://scn/end.tscn")
+	get_tree().change_scene_to_file("res://scn/end.tscn")
 	# TODO: Lose screen

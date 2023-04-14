@@ -30,6 +30,6 @@ func _process(delta):
 	else:
 		targetScale = Vector2(0.8,0.8)
 
-	rect_scale = lerp(rect_scale, targetScale, delta)
+	scale = lerp(scale, targetScale, delta)
 	#rect_scale.x = lerp(rect_scale.x, targetScale, delta)
 	#rect_scale.y = lerp(rect_scale.y, targetScale, delta)

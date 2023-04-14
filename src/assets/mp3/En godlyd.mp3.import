@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/En godlyd.mp3-928dffb5facc387256e15ee1eedfd2c3.mp3str"
+uid="uid://bf73dbxxoshal"
+path="res://.godot/imported/En godlyd.mp3-928dffb5facc387256e15ee1eedfd2c3.mp3str"
 
 [deps]
 
 source_file="res://assets/mp3/En godlyd.mp3"
-dest_files=[ "res://.import/En godlyd.mp3-928dffb5facc387256e15ee1eedfd2c3.mp3str" ]
+dest_files=["res://.godot/imported/En godlyd.mp3-928dffb5facc387256e15ee1eedfd2c3.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

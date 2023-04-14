@@ -1,7 +1,7 @@
 extends Node2D
 
 
-onready var game_manager = get_node("/root/GameManager")
+@onready var game_manager = get_node("/root/GameManager")
 
 func _ready():
 	var score = 0

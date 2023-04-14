@@ -40,7 +40,7 @@ func _process(delta):
 	if current_pos.distance_to(end_pos) < 1:
 		current_pos = end_pos
 		if current_pos == pot:
-			get_tree().change_scene("res://scn/game.tscn")
+			get_tree().change_scene_to_file("res://scn/game.tscn")
 		
 	#$Camera2D.zoom = Vector2(.2, .2)
 	#$Camera2D.position = Vector2(700, 450)
